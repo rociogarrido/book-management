@@ -13,8 +13,8 @@ import { AppState } from '../app.state';
 export class BookListComponent {
   books$: Observable<Book[]>;
 
-  constructor(private store: Store<{ books: Book[] }>) {
-    this.books$ = store.pipe(select('books'));
+  constructor(private store: Store<AppState>) {
+    this.books$ = store.pipe(select('book'));
   }
 
   addBook(id: string, title: string, author: string) {
